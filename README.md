@@ -3,7 +3,6 @@ This repository is to store and collaborate on code for BNFO 620 snake color pat
 
 contents
 - ReadME
-
 - iNaturalist_api_calls.py
 	- first api access attempt
 	- unfinished
