@@ -14,7 +14,7 @@ getPhotosINat <- function(snakeName,inatLimit = 100){
       #get the values 
       New_row = list(toString(inat.df$inat$data[[1]]$name[[y]]),photoData.df[[y]]['url'],photoData.df[[y]]['id'])
       #append to df
-      snakes.df <- rbind(snakePics,New_row)
+      snakes.df <- rbind(snakes.df,New_row)
   }
   #update column names
   colnames(snakes.df) <- c('snake_name','url','id')
@@ -22,6 +22,5 @@ getPhotosINat <- function(snakeName,inatLimit = 100){
 }
 
 #testing tools
-
 snake_photos <- getPhotosINat('Lampropeltis californiae')
 
