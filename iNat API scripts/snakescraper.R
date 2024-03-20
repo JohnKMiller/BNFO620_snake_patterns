@@ -17,8 +17,7 @@ looper <- function(species_df) {
 }
 
 # Usage:
-species_df <- read_excel("inputfile") 
-output_file <- "outputfile"  # Define output file name
+species_df <- read_excel("species_list.xlsx") 
+output_file <- "rawphotos.xlsx"  # Define output file name
 rawphotos <- looper(species_df)
-writexl::write_xlsx(photosPlease,output_file)
-
+writexl::write_xlsx(rawphotos,output_file)
