@@ -1,18 +1,24 @@
-source("~/Desktop/School/R code/snake_api_query.R")
-library(readxl)
+source("filepath") #source of the other R file with the function 
+library(readxl) #read in the excel file
+library(writexl)
+library(spocc)
 
-getPhotosINat <- function(snakeList) {
-  for (i in seq_along(snakeList)) {
-    # Pause execution for the specified delay time
-    delay <- 2 
-    Sys.sleep(delay)
-  }
+
+looper <- function(species_df) {
+  delay <- 2  # Define delay time outside the loop
+  
+  photosPlease <- getPhotosINat(species_df$Species)  # Assuming getPhotosINat() returns a dataframe
+  
+  # Pause execution for the specified delay time
+  Sys.sleep(delay)  
+  
+  # Write the dataframe to an Excel file
+  return(photosPlease)
 }
 
-species_list <- read_excel("species_list.xlsx")
-
-snakeList <- list(species_list$Species)
-
-getPhotosINat(snakeList)
-
+# Usage:
+species_df <- read_excel("inputfile") 
+output_file <- "outputfile"  # Define output file name
+rawphotos <- looper(species_df)
+writexl::write_xlsx(photosPlease,output_file)
 
