@@ -1,6 +1,6 @@
 source("filepath") #source of the other R file with the function 
 library(readxl) #read in the excel file
-library(writexl)
+library(openxlsx)
 library(spocc)
 
 
@@ -20,4 +20,4 @@ looper <- function(specieslist) {
 species_df <- read_excel("species_list.xlsx") 
 output_file <- "rawphotos.xlsx"  # Define output file name
 specieslist <- species_df$Species
-writexl::write_xlsx(looper(specieslist),output_file)
+write.xlsx(looper(specieslist), output_file)
