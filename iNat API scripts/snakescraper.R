@@ -17,7 +17,7 @@ looper <- function(specieslist) {
 }
 
 # Usage:
-species_df <- read_excel("species_list.xlsx") 
+species_df <- read_excel("species_list.xlsx") #This is your input file
 output_file <- "rawphotos.xlsx"  # Define output file name
-specieslist <- species_df$Species
-write.xlsx(looper(specieslist), output_file)
+specieslist <- species_df$Species #List of snakes
+write.xlsx(looper(specieslist), output_file) #This output 
