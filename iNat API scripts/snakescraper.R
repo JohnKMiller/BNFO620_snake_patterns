@@ -4,10 +4,10 @@ library(writexl)
 library(spocc)
 
 
-looper <- function(species_df) {
+looper <- function(specieslist) {
   delay <- 2  # Define delay time outside the loop
   
-  photosPlease <- getPhotosINat(species_df$Species)  # Assuming getPhotosINat() returns a dataframe
+  photosPlease <- getPhotosINat(specieslist)  # Assuming getPhotosINat() returns a dataframe
   
   # Pause execution for the specified delay time
   Sys.sleep(delay)  
@@ -19,5 +19,5 @@ looper <- function(species_df) {
 # Usage:
 species_df <- read_excel("species_list.xlsx") 
 output_file <- "rawphotos.xlsx"  # Define output file name
-rawphotos <- looper(species_df)
-writexl::write_xlsx(rawphotos,output_file)
+specieslist <- species_df$Species
+writexl::write_xlsx(looper(specieslist),output_file)
